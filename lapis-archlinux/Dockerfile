@@ -1,7 +1,7 @@
 FROM finalduty/archlinux:latest
 MAINTAINER leaf corcoran <leafot@gmail.com>
 
-RUN pacman -S base-devel luajit postgresql postgresql-libs luarocks5.1 redis geoip tup --noconfirm && (yes | pacman -Scc)
+RUN pacman -S base-devel luajit postgresql postgresql-libs luarocks5.1 redis geoip tup mariadb libmariadbclient mariadb-clients openssl-1.0 --noconfirm && (yes | pacman -Scc)
 
 # setup openresty
 RUN curl -O https://openresty.org/download/openresty-1.11.2.1.tar.gz && \
