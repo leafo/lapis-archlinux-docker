@@ -11,3 +11,6 @@ RUN curl -O https://openresty.org/download/openresty-1.11.2.3.tar.gz && \
 
 # setup postgresql
 RUN su postgres -c "initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'" && mkdir /run/postgresql && chown postgres:postgres /run/postgresql
+
+# setup mysql
+RUN useradd -r -s /usr/bin/nologin mysql && mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
