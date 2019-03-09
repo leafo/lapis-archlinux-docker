@@ -20,4 +20,4 @@ RUN su postgres -c "initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/da
 
 # install lua dependencies
 COPY deps /deps
-RUN cat /deps | sed 's/#.*//g' | while read dep; do luarocks --lua-version=5.1 install "$dep"; done
+RUN cat /deps | sed 's/#.*//g' | while read dep; do luarocks --lua-version=5.1 install --local "$dep"; done
