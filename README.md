@@ -4,8 +4,8 @@
 
 This repository provides two Docker images for developing and writing test suites in Lapis:
 
-* [lapis-archlinux](https://github.com/users/leafo/packages/container/package/lapis-archlinux-itchio) &mdash; Contains Lapis, OpenResty, Postgres, and MySQL. Used for the [Lapis test suite](https://github.com/leafo/lapis/blob/master/Dockerfile)
-* [lapis-archlinux-itchio](https://github.com/users/leafo/packages/container/package/lapis-archlinux) &mdash; Contains Lapis, OpenResty, Postgres, and set of dependencies often used by web projects I've built. (itchio being the prototype example, but there is nothing itchio specific here) (Located in the itchio branch of this repository)
+* [`lapis-archlinux`](https://github.com/users/leafo/packages/container/package/lapis-archlinux-itchio) &mdash; Contains Lapis, OpenResty, Postgres, and MySQL. Used for the [Lapis test suite](https://github.com/leafo/lapis/blob/master/Dockerfile)
+* [`lapis-archlinux-itchio`](https://github.com/users/leafo/packages/container/package/lapis-archlinux) &mdash; Contains Lapis, OpenResty, Postgres, and set of dependencies often used by web projects I've built. (itchio being the prototype example, but there is nothing itchio specific here) (Located in the itchio branch of this repository)
 
 The images are based off of Arch Linux
 
