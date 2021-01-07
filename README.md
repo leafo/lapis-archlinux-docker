@@ -13,10 +13,11 @@ The images are based off of Arch Linux
 
 These are the versions of things included in the `latest` tag:
 
-* openresty: 19.3.1
+* openresty: 19.3.1 (Includes luajit)
 * postgresql: 13.1
 * mariadb: 10.5.8
 * redis: 6.0.9
+* lua: 5.1, 5.2, 5.3, 5.4
 * luarocks: 3.4.0
 
 ## Usage
@@ -30,3 +31,9 @@ Or
 ```Dockerfile
 FROM ghcr.io/leafo/lapis-archlinux-itchio:latest
 ```
+
+## Building
+
+1. Update `Dockerfile` with new dependencies
+2. Build the image `docker build -t ghcr.io/leafo/lapis-archlinux .`
+3. Push `docker push ghcr.io/leafo/lapis-archlinux`
