@@ -1,7 +1,7 @@
 FROM archlinux/base:latest
 MAINTAINER leaf corcoran <leafot@gmail.com>
 
-RUN pacman -Sy base-devel lua51 luajit postgresql postgresql-libs luarocks redis geoip tup git npm sassc pygmentize --noconfirm && \
+RUN pacman -Sy base-devel lua51 postgresql postgresql-libs luarocks redis geoip tup git npm sassc pygmentize --noconfirm && \
 	(yes | pacman -Scc || :) && \
 	npm install -g coffeescript@1.12.7 && \
 	npm install -g uglify-js && \
