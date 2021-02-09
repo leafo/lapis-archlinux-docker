@@ -20,4 +20,4 @@ RUN su postgres -c "initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/da
 
 # install lua dependencies
 COPY itchio-dev-1.rockspec /
-RUN luarocks --lua-version=5.1 build --only-deps /itchio-dev-1.rockspec
+RUN luarocks --lua-version=5.1 build --local --only-deps /itchio-dev-1.rockspec
