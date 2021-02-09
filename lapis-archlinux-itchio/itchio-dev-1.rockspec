@@ -16,11 +16,11 @@ dependencies = {
   "moonscript",
   "bcrypt",
   "luabitop",
-	"busted",
+  "busted",
 
   -- these should install from master
   "lapis",
-  "lapis-community",
+  -- "lapis-community",
 
   "lapis-exceptions ~> 2",
   "lapis-bayes ~> 1.1",
