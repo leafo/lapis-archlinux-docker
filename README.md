@@ -28,12 +28,6 @@ These are the versions of things included in the `latest` tag:
 FROM ghcr.io/leafo/lapis-archlinux:latest
 ```
 
-### Building
-
-1. Update `Dockerfile` with new dependencies
-2. Build the image `docker build -t ghcr.io/leafo/lapis-archlinux .`
-3. Push `docker push ghcr.io/leafo/lapis-archlinux`
-
 ## `lapis-archlinux-itchio`
 
 ### Versions
