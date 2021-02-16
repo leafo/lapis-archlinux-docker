@@ -1,11 +1,10 @@
 FROM archlinux/base:latest
 MAINTAINER leaf corcoran <leafot@gmail.com>
 
-RUN pacman -Syu base-devel lua51 postgresql postgresql-libs luarocks redis geoip libmaxminddb tup git npm sassc pygmentize --noconfirm && \
+RUN pacman -Syu base-devel lua51 postgresql postgresql-libs luarocks redis geoip libmaxminddb tup git npm sassc pygmentize discount --noconfirm && \
 	(yes | pacman -Scc || :) && \
 	npm install -g coffeescript@1.12.7 && \
-	npm install -g uglify-js && \
-	(cd /tmp && sudo -u nobody git clone https://aur.archlinux.org/discount.git/ && cd discount && sudo -u nobody makepkg && pacman -U *.tar.zst --noconfirm)
+	npm install -g uglify-js
 
 # setup openresty
 RUN curl -O https://openresty.org/download/openresty-1.19.3.1.tar.gz && \
@@ -19,5 +18,5 @@ RUN curl -O https://openresty.org/download/openresty-1.19.3.1.tar.gz && \
 RUN su postgres -c "initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'" && mkdir /run/postgresql && chown postgres:postgres /run/postgresql
 
 # install lua dependencies
-COPY itchio-dev-1.rockspec /
+COPY itchio-dev-1.rockspec luarocks.lock /
 RUN luarocks --lua-version=5.1 build --local --only-deps /itchio-dev-1.rockspec
