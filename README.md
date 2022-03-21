@@ -7,7 +7,7 @@ This repository provides two Docker images for developing and writing test suite
 * [`lapis-archlinux`](https://github.com/users/leafo/packages/container/package/lapis-archlinux-itchio) &mdash; Contains Lapis, OpenResty, Postgres, and MySQL. Used for the [Lapis test suite](https://github.com/leafo/lapis/blob/master/Dockerfile)
 * [`lapis-archlinux-itchio`](https://github.com/users/leafo/packages/container/package/lapis-archlinux) &mdash; Contains Lapis, OpenResty, Postgres, and set of dependencies often used by web projects I've built, and a base set of Lua modules preinstalled described below.
 
-The images are based off of Arch Linux base image, `archlinux/base`
+The images are based off of Arch Linux base image, `archlinux`
 
 ## `lapis-archlinux`
 
@@ -34,11 +34,11 @@ FROM ghcr.io/leafo/lapis-archlinux:latest
 
 The following system packages are installed on the `latest` tag:
 
-* openresty: 19.3.1 (Includes luajit)
-* postgresql: 13.2
+* openresty: 19.9.1 (Includes luajit)
+* postgresql: 13.6
 * redis: 6.0
 * lua: 5.1
-* luarocks: 3.5
+* luarocks: 3.8
 * npm &mdash; With coffeescript@1.12.7 and uglify-js installed globally
 * sassc
 * tup
