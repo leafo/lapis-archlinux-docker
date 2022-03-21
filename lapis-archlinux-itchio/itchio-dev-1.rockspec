@@ -20,10 +20,10 @@ dependencies = {
   "argparse", -- needed for some cmd scripts
 
   "lapis ~> 1.9",
-  "lapis-community == 1.40.0",
+  "lapis-community == 1.41.0",
 
-  "lapis-exceptions ~> 2",
-  "lapis-bayes ~> 1.1",
+  "lapis-exceptions ~> 2.2",
+  "lapis-bayes ~> 1.2",
   "lapis-console ~> 1.2",
   "lapis-systemd ~> 1.0",
   "lapis-redis ~> 1.0",
@@ -37,7 +37,7 @@ dependencies = {
   "giflib ~> 1.0",
   "lua-twitter ~> 1.0",
   "luajit-geoip ~> 2.1",
-  "payments ~> 1.0",
+  "payments ~> 1.1",
   "http ~> 0.4",
 
   "basexx",
