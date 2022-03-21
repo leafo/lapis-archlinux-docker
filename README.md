@@ -36,7 +36,7 @@ The following system packages are installed on the `latest` tag:
 
 * openresty: 19.9.1 (Includes luajit)
 * postgresql: 13.6
-* redis: 6.0
+* redis: 6.2
 * lua: 5.1
 * luarocks: 3.8
 * npm &mdash; With coffeescript@1.12.7 and uglify-js installed globally
