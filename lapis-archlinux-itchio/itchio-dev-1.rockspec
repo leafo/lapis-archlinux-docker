@@ -12,32 +12,33 @@ description = {
 }
 
 dependencies = {
+  "busted",
+
   "lua ~> 5.1",
   "moonscript",
-  "bcrypt",
+  "bcrypt == 2.1-6", -- Note: future versions of bcrypt will fail to verify due to prefix change 2y vs 2b
   "luabitop",
-  "busted",
   "argparse", -- needed for some cmd scripts
 
-  "lapis ~> 1.9",
+  "lapis ~> 1.10",
   "lapis-community == 1.41.0",
 
-  "lapis-exceptions ~> 2.2",
+  "lapis-exceptions ~> 2.3",
   "lapis-bayes ~> 1.2",
   "lapis-console ~> 1.2",
   "lapis-systemd ~> 1.0",
   "lapis-redis ~> 1.0",
   "lapis-annotate ~> 1.2",
-  "cloud_storage ~> 1.1",
+  "cloud_storage ~> 1.2",
   "mailgun ~> 1.2",
-  "web_sanitize ~> 1.1",
+  "web_sanitize ~> 1.4",
   "magick ~> 1.6",
-  "tableshape ~> 2.2",
-  "sitegen ~> 0.1",
+  "tableshape ~> 2.4",
+  "sitegen ~> 0.2",
   "giflib ~> 1.0",
   "lua-twitter ~> 1.0",
   "luajit-geoip ~> 2.1",
-  "payments ~> 1.1",
+  "payments ~> 1.4",
   "http ~> 0.4",
 
   "basexx",
