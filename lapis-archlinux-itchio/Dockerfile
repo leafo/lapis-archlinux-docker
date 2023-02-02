@@ -10,7 +10,7 @@ RUN pacman -Sy base-devel lua51 postgresql postgresql-libs luarocks redis geoip 
 RUN curl -O https://openresty.org/download/openresty-1.21.4.1.tar.gz && \
 	tar xvfz openresty-1.21.4.1.tar.gz && \
 	(cd openresty-1.21.4.1 && \
-		./configure --with-pcre-jit --with-http_geoip_module --with-cc-opt="-I/usr/include/openssl-1.0" --with-ld-opt="-L/usr/lib/openssl-1.0" && \
+		./configure --with-pcre-jit && \
 		make && make install) && \
 	rm -rf openresty-1.21.4.1 && rm openresty-1.21.4.1.tar.gz
 

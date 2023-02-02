@@ -16,12 +16,13 @@ dependencies = {
 
   "lua ~> 5.1",
   "moonscript",
-  "bcrypt == 2.1-6", -- Note: future versions of bcrypt will fail to verify due to prefix change 2y vs 2b
+  "bcrypt ~> 2.3",
   "luabitop",
-  "argparse", -- needed for some cmd scripts
+  "argparse",
 
-  "lapis ~> 1.10",
-  "lapis-community == 1.41.0",
+  "lapis == 1.12.0",
+  "lapis-community == 1.42.2",
+  "lapis-eswidget >= 1.1.0",
 
   "lapis-exceptions ~> 2.3",
   "lapis-bayes ~> 1.2",
@@ -29,11 +30,11 @@ dependencies = {
   "lapis-systemd ~> 1.0",
   "lapis-redis ~> 1.0",
   "lapis-annotate ~> 1.2",
-  "cloud_storage ~> 1.2",
+  "cloud_storage ~> 1.3",
   "mailgun ~> 1.2",
   "web_sanitize ~> 1.4",
   "magick ~> 1.6",
-  "tableshape ~> 2.4",
+  "tableshape >= 2.6",
   "sitegen ~> 0.2",
   "giflib ~> 1.0",
   "lua-twitter ~> 1.0",
@@ -45,7 +46,8 @@ dependencies = {
   "cmark",
   "lrandom",
   "lpeg_patterns",
-  "redis-lua == 2.0.4",
+
+  "redis-lua"
 }
 
 build = {
