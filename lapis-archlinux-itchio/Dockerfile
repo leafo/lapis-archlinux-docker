@@ -4,7 +4,7 @@ MAINTAINER leaf corcoran <leafot@gmail.com>
 RUN pacman -Sy base-devel lua51 postgresql postgresql-libs luarocks redis geoip libmaxminddb tup git npm sassc pygmentize discount --noconfirm && \
 	(yes | pacman -Scc || :) && \
 	npm install -g coffeescript@1.12.7 && \
-	npm install -g uglify-js
+	npm install -g esbuild@0.17.18
 
 # setup openresty
 RUN curl -O https://openresty.org/download/openresty-1.21.4.1.tar.gz && \
