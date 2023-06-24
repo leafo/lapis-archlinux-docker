@@ -1,7 +1,7 @@
 FROM archlinux:latest
 MAINTAINER leaf corcoran <leafot@gmail.com>
 
-RUN pacman -Sy base-devel lua51 lua52 lua53 lua postgresql postgresql-libs luarocks redis tup mariadb libmariadbclient mariadb-clients openssl-1.0 git --noconfirm && (yes | pacman -Scc || :)
+RUN pacman -Sy base-devel lua51 lua52 lua53 lua sqlite postgresql postgresql-libs luarocks redis tup mariadb libmariadbclient mariadb-clients openssl-1.0 git --noconfirm && (yes | pacman -Scc || :)
 
 # setup openresty
 RUN curl -O https://openresty.org/download/openresty-1.19.9.1.tar.gz && \
