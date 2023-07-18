@@ -1,4 +1,4 @@
-package = "itchio"
+package = "blog"
 version = "dev-1"
 
 source = {
@@ -6,9 +6,9 @@ source = {
 }
 
 description = {
-  summary = "the itch.io",
-  homepage = "https://itch.io",
-  license = "proprietary"
+  summary = "",
+  homepage = "",
+  license = "Apache"
 }
 
 dependencies = {
