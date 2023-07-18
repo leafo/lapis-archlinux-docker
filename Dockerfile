@@ -1,5 +1,4 @@
 FROM archlinux:latest
-MAINTAINER leaf corcoran <leafot@gmail.com>
 
 RUN pacman -Sy base-devel lua51 lua52 lua53 lua postgresql postgresql-libs luarocks redis tup mariadb libmariadbclient mariadb-clients openssl-1.1 git --noconfirm && (yes | pacman -Scc || :)
 
@@ -15,3 +14,7 @@ RUN su postgres -c "initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/da
 
 # setup mysql
 RUN mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+# install lua dependencies
+COPY blog-dev-1.rockspec luarocks.lock /
+RUN luarocks --lua-version=5.1 build --tree "$HOME/.luarocks" --only-deps /blog-dev-1.rockspec
