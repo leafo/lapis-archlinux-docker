@@ -3,7 +3,8 @@ MAINTAINER leaf corcoran <leafot@gmail.com>
 
 ARG OPENRESTY_VERSION="1.21.4.2"
 
-RUN pacman -Sy base-devel lua51 postgresql postgresql-libs luarocks redis geoip libmaxminddb tup git npm sassc pygmentize discount openssl-1.1 --noconfirm && \
+RUN pacman-key --init && pacman -Sy archlinux-keyring --noconfirm && \
+  pacman -Syu base-devel lua51 postgresql postgresql-libs luarocks redis geoip libmaxminddb tup git npm nodejs sassc pygmentize discount openssl-1.1 --noconfirm && \
 	(yes | pacman -Scc || :) && \
 	npm install -g coffeescript@1.12.7 && \
 	npm install -g esbuild@0.17.18
