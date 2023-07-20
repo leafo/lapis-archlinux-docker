@@ -12,7 +12,7 @@ RUN curl -O https://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz
 	rm -rf openresty-${OPENRESTY_VERSION} && rm openresty-${OPENRESTY_VERSION}.tar.gz
 
 # setup postgresql
-RUN su postgres -c "initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'" && mkdir /run/postgresql && chown postgres:postgres /run/postgresql
+RUN (echo 'en_US.UTF-8 UTF-8' | sudo tee /etc/locale.gen) && sudo locale-gen && su postgres -c "initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'" && mkdir /run/postgresql && chown postgres:postgres /run/postgresql
 
 # setup mysql
 RUN mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
