@@ -1,7 +1,9 @@
 PHONY: install_deps build deploy
 
-# this will update the lockfile to record all the dependencies, the lockfile will be uploaded to docker when building the image
-install_deps:
+# this will create a lockfile from a fresh luarocks tree from the alongside
+# rockspec the lockfile will be uploaded to docker to guarantee a specific set
+# of dependencies will be installed when building
+luarocks.lock::
 	-rm -r .luarocks
 	-rm -r lua_modules/
 	luarocks --lua-version=5.1 init
