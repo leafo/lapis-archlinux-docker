@@ -2,12 +2,14 @@ FROM archlinux:latest
 MAINTAINER leaf corcoran <leafot@gmail.com>
 
 ARG OPENRESTY_VERSION="1.21.4.2"
+ARG ESBUILD_VERSION="0.17.18"
+ARG COFFEESCRIPT_VERSION="1.12.7"
 
 RUN pacman-key --init && pacman -Sy archlinux-keyring --noconfirm && \
   pacman -Syu base-devel lua51 postgresql postgresql-libs luarocks redis geoip libmaxminddb tup git npm nodejs sassc pygmentize discount openssl-1.1 --noconfirm && \
 	(yes | pacman -Scc || :) && \
-	npm install -g coffeescript@1.12.7 && \
-	npm install -g esbuild@0.17.18
+	npm install -g coffeescript@${COFFEESCRIPT_VERSION} && \
+	npm install -g esbuild@${ESBUILD_VERSION}
 
 # setup openresty
 RUN curl -O https://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz && \
