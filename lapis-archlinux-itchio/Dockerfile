@@ -20,4 +20,5 @@ RUN (echo 'en_US.UTF-8 UTF-8' | sudo tee /etc/locale.gen) && sudo locale-gen && 
 
 # install lua dependencies
 COPY itchio-dev-1.rockspec luarocks.lock /
-RUN luarocks --lua-version=5.1 build --tree "$HOME/.luarocks" --only-deps /itchio-dev-1.rockspec
+# The openssl env variabls are necessary for cqueues
+RUN luarocks --lua-version=5.1 build --tree "$HOME/.luarocks" --only-deps /itchio-dev-1.rockspec OPENSSL_LIBDIR=/usr/lib/openssl-1.1/ OPENSSL_INCDIR=/usr/include/openssl-1.1/
