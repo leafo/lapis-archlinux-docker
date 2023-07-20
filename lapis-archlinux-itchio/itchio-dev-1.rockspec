@@ -21,7 +21,7 @@ dependencies = {
   "argparse", -- needed for some cmd scripts
 
   "lapis == 1.14.0",
-  "lapis-community == 1.44.1",
+  "lapis-community == 1.44.3",
   "lapis-eswidget >= 1.1.0",
 
   "lapis-exceptions ~> 2.3",
@@ -32,7 +32,7 @@ dependencies = {
   "lapis-annotate ~> 2.0",
   "cloud_storage ~> 1.3",
   "mailgun ~> 1.2",
-  "web_sanitize ~> 1.4",
+  "web_sanitize ~> 1.5",
   "magick ~> 1.6",
   "tableshape >= 2.6",
   "sitegen ~> 0.2",
@@ -41,6 +41,7 @@ dependencies = {
   "luajit-geoip ~> 2.1",
   "payments ~> 1.4",
   "http ~> 0.4",
+  "lua-openai >= 1.2.0",
 
   "basexx",
   "cmark",
