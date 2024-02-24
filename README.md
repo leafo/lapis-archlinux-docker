@@ -34,13 +34,14 @@ FROM ghcr.io/leafo/lapis-archlinux:latest
 
 The following system packages are installed on the `latest` tag:
 
-* openresty: 19.9.1 (Includes luajit)
-* postgresql: 13.6
-* redis: 6.2
-* lua: 5.1
-* luarocks: 3.8
+* openresty: 1.25.3.1 compiled with `--with-pcre-jit --with-http_stub_status_module --with-file-aio --with-threads`
+* postgresql: 16.1
+* redis: 7.2.4
+* lua: 5.4.6, 5.1.5
+* luarocks: 3.9.2
 * npm &mdash; With coffeescript@1.12.7 and uglify-js installed globally
-* sassc
+* sassc 3.6.2
+* esbuild
 * tup
 * libmaxminddb 
 * discount
