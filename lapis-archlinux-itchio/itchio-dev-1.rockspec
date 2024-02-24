@@ -20,11 +20,11 @@ dependencies = {
   "luabitop",
   "argparse", -- needed for some cmd scripts
 
-  "lapis == 1.14.0",
+  "lapis == 1.16.0",
   "lapis-community == 1.44.3",
   "lapis-eswidget >= 1.1.0",
 
-  "lapis-exceptions ~> 2.3",
+  "lapis-exceptions ~> 2.4",
   "lapis-bayes ~> 1.2",
   "lapis-console ~> 1.2",
   "lapis-systemd ~> 2.0",

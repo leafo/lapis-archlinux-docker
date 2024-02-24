@@ -1,7 +1,7 @@
 FROM archlinux:latest
 MAINTAINER leaf corcoran <leafot@gmail.com>
 
-ARG OPENRESTY_VERSION="1.21.4.2"
+ARG OPENRESTY_VERSION="1.25.3.1"
 ARG ESBUILD_VERSION="0.17.18"
 ARG COFFEESCRIPT_VERSION="1.12.7"
 
@@ -15,7 +15,7 @@ RUN pacman-key --init && pacman -Sy archlinux-keyring --noconfirm && \
 RUN curl -O https://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz && \
 	tar xvfz openresty-${OPENRESTY_VERSION}.tar.gz && \
 	(cd openresty-${OPENRESTY_VERSION} && \
-		./configure --with-pcre-jit --with-http_stub_status_module -j4 && \
+		./configure --with-pcre-jit --with-http_stub_status_module --with-file-aio --with-threads -j4 && \
 		make -j 4 && make install) && \
 	rm -rf openresty-${OPENRESTY_VERSION} && rm openresty-${OPENRESTY_VERSION}.tar.gz
 
