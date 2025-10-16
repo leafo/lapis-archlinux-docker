@@ -15,7 +15,7 @@ RUN pacman-key --init && pacman -Sy archlinux-keyring --noconfirm && \
 RUN curl -O https://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz && \
 	tar xvfz openresty-${OPENRESTY_VERSION}.tar.gz && \
 	(cd openresty-${OPENRESTY_VERSION} && \
-		./configure --with-pcre-jit --with-http_stub_status_module --with-file-aio --with-threads -j4 && \
+		./configure --with-pcre-jit --with-http_stub_status_module --with-file-aio --with-threads --with-http_realip_module -j4 && \
 		make -j 4 && make install) && \
 	rm -rf openresty-${OPENRESTY_VERSION} && rm openresty-${OPENRESTY_VERSION}.tar.gz
 
@@ -23,5 +23,7 @@ RUN (echo 'en_US.UTF-8 UTF-8' | sudo tee /etc/locale.gen) && sudo locale-gen && 
 
 # install lua dependencies
 COPY itchio-dev-1.rockspec luarocks.lock /
-# The openssl env variabls are necessary for cqueues
-RUN luarocks --lua-version=5.1 build --tree "$HOME/.luarocks" --only-deps /itchio-dev-1.rockspec OPENSSL_LIBDIR=/usr/lib/openssl-1.1/ OPENSSL_INCDIR=/usr/include/openssl-1.1/
+
+# luaossl doesn't work with normal gcc as of 2025
+RUN CC="gcc -std=gnu99" luarocks --lua-version=5.1 install --tree "$HOME/.luarocks" luaossl \
+  luarocks --lua-version=5.1 build --tree "$HOME/.luarocks" --only-deps /itchio-dev-1.rockspec
