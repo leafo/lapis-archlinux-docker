@@ -33,7 +33,6 @@ return {
       lpeg = "1.1.0-2",
       lpeg_patterns = "0.5-0",
       lrandom = "20180729-1",
-      lua = "5.1-1",
       ["lua-cjson"] = "2.1.0.10-1",
       ["lua-discount"] = "1.2.10.1-1",
       ["lua-openai"] = "1.4.3-1",

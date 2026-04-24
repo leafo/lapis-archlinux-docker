@@ -15,6 +15,7 @@ luarocks.lock::
 # we use no-cache here since we run pacman -Syu and we would like to always
 # update the system to the latest before uploading the image, and not use the
 # stall installation of packages 
+# Don't forget to run `docker pull archlinux:latest` when building a new version if it's a been a while
 build:
 	docker build --no-cache -t ghcr.io/leafo/lapis-archlinux-itchio .
 
