@@ -1,12 +1,12 @@
 FROM archlinux:latest
 MAINTAINER leaf corcoran <leafot@gmail.com>
 
-ARG OPENRESTY_VERSION="1.29.2.3"
-ARG ESBUILD_VERSION="0.28.0"
+ARG OPENRESTY_VERSION="1.31.1.1"
+ARG ESBUILD_VERSION="0.28.2"
 ARG COFFEESCRIPT_VERSION="1.12.7"
 
 RUN pacman-key --init && pacman -Sy archlinux-keyring --noconfirm && \
-  pacman -Syu base-devel lua51 postgresql postgresql-libs luarocks lua51-luarocks valkey geoip libmaxminddb tup git npm nodejs sassc pygmentize discount --noconfirm && \
+  pacman -Syu base-devel lua51 postgresql postgresql-libs luarocks lua51-luarocks valkey geoip libmaxminddb tup git npm nodejs sassc python-pygments discount --noconfirm && \
 	(yes | pacman -Scc || :) && \
 	npm install -g coffeescript@${COFFEESCRIPT_VERSION} && \
 	npm install -g esbuild@${ESBUILD_VERSION}
