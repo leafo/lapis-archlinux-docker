@@ -40,6 +40,7 @@ The following system packages are installed on the `latest` tag:
 * lua: 5.5.0, 5.1.5
 * luarocks: 3.13.0
 * npm &mdash; With coffeescript@1.12.7 and esbuild@0.28.2 installed globally
+* mooncoffee: 1.1.0
 * sassc 3.6.2
 * tup
 * libmaxminddb 

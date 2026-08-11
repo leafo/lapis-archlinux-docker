@@ -4,12 +4,16 @@ MAINTAINER leaf corcoran <leafot@gmail.com>
 ARG OPENRESTY_VERSION="1.31.1.1"
 ARG ESBUILD_VERSION="0.28.2"
 ARG COFFEESCRIPT_VERSION="1.12.7"
+ARG MOONCOFFEE_VERSION="1.1.0"
 
 RUN pacman-key --init && pacman -Sy archlinux-keyring --noconfirm && \
   pacman -Syu base-devel lua51 postgresql postgresql-libs luarocks lua51-luarocks valkey geoip libmaxminddb tup git npm nodejs sassc python-pygments discount --noconfirm && \
 	(yes | pacman -Scc || :) && \
 	npm install -g coffeescript@${COFFEESCRIPT_VERSION} && \
 	npm install -g esbuild@${ESBUILD_VERSION}
+
+RUN curl -L https://github.com/leafo/mooncoffee/releases/download/v${MOONCOFFEE_VERSION}/mooncoffee-v${MOONCOFFEE_VERSION}-linux-amd64.tar.gz | \
+	tar xz --strip-components=1 -C /usr/local/bin mooncoffee-v${MOONCOFFEE_VERSION}-linux-amd64/mooncoffee
 
 # setup openresty
 RUN curl -O https://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz && \
