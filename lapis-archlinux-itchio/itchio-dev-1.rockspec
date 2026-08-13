@@ -20,7 +20,7 @@ dependencies = {
   "luabitop",
   "argparse",
 
-  "lapis == 1.18.0",
+  "lapis == 1.19.0",
   "lapis-community == 1.44.3",
   "lapis-eswidget >= 1.5.0",
 
