@@ -13,14 +13,16 @@ The images are based off of Arch Linux base image, `archlinux`
 
 ### Versions
 
-These are the versions of things included in the `latest` tag:
+The following system packages are installed on the `latest` tag:
 
-* openresty: 19.3.1 (Includes luajit)
-* postgresql: 13.1
-* mariadb: 10.5.8
-* redis: 6.0.9
-* lua: 5.1, 5.2, 5.3, 5.4
-* luarocks: 3.4.0
+* openresty: 1.31.1.1 compiled with `--with-pcre-jit --with-http_stub_status_module --with-file-aio --with-threads --with-http_realip_module --with-http_gzip_static_module`
+* postgresql: 18.6
+* mariadb: 12.3.2
+* valkey: 9.1.1
+* sqlite: 3.53.4
+* lua: 5.5.1, 5.4.9, 5.3.6, 5.2.4, 5.1.5
+* luarocks: 3.13.0
+* tup
 
 ### Usage
 
